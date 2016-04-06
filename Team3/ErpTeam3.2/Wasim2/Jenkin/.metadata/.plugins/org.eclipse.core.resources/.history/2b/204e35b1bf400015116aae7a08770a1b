@@ -1,0 +1,50 @@
+package hintse;
+import java.io.FileInputStream;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+
+
+public class Clddr {
+	public WebDriver driver;
+	public FileInputStream fi;
+	public Workbook w;
+	public Sheet s;
+	
+  @Test
+  public void login() throws Exception{
+	  FileInputStream fi=new FileInputStream("D:/Book2.xlsx");
+	Workbook w=Workbook.getWorkbook(fi);
+	 Sheet s=w.getSheet("sheet1");
+	 for(int i=1;i<s.getRows();i++){
+		driver.findElement(By.name("username")).sendKeys(s.getCell(0, 1).getContents());
+Thread.sleep(1000);
+		driver.findElement(By.name("password")).sendKeys("admin");
+		new Select(driver.findElement(By.xpath(".//*[@id='org_id']"))).selectByVisibleText(s.getCell(1, 1).getContents());
+			Thread.sleep(1000);
+		driver.findElement(By.xpath(".//*[@id='user_login']/ul/li[4]/input")).click();
+  }
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  driver=new FirefoxDriver();
+	  driver.get("http://localhost/erp/");
+	  driver.manage().window().maximize();
+  }
+
+  @AfterTest
+  public void afterTest() {
+  }
+
+}

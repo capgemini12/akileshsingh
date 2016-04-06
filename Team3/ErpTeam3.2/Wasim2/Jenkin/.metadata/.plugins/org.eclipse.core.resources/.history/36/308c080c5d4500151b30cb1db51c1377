@@ -1,0 +1,111 @@
+package hintse;
+
+//import java.util.Set;
+
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+
+import com.thoughtworks.selenium.condition.Text;
+
+public class Class3{
+	public WebDriver driver;
+	@Test
+	 public void f() throws Exception{
+
+		  driver.findElement(By.xpath(".//*[@id='topbar']/div/div/div[3]/div[1]/div/button")).click();
+
+			Thread.sleep(2000);
+
+			driver.findElement(By.name("username")).sendKeys("admin");
+
+			driver.findElement(By.name("password")).sendKeys("admin");
+
+			driver.findElement(By.xpath(".//*[@id='user_login']/ul/li[4]/input")).click();
+
+			Thread.sleep(1000);
+		
+		driver.findElement(By.xpath(".//*[@id='dashborad_menu']/li[1]/a")).click();
+
+			Thread.sleep(3000);
+	//item master
+			driver.findElement(By.xpath(".//*[@id='path_by_module']/div/div[2]/ul[2]/li/ul/li[1]/a")).click();
+	        Thread.sleep(4000);
+	      //  driver.findElement(By.xpath(".//*[@id='ui-id-22']")).click();
+	       // Thread.sleep(1000);
+	        //new Select(driver.findElement(By.xpath(".//*[@id='org_id']"))).selectByVisibleText("MAS");
+	        Thread.sleep(3000);
+	       driver.findElement(By.xpath(".//*[@id='item_number']")).click();
+	    	Thread.sleep(3000);
+	    	driver.findElement(By.xpath(".//*[@id='item_number']")).sendKeys("9");
+	    	driver.findElement(By.xpath(".//*[@id='tabsHeader-1']/ul/li[3]/i")).click();
+	    
+	    	Set<String> windows = driver.getWindowHandles();
+	    	System.out.println("window name"+windows);
+	    	Object s[]=windows.toArray();
+	    	driver.switchTo().window(s[1].toString());
+	    	Thread.sleep(3000);
+	    	driver.findElement(By.xpath(".//*[@id='search_submit_btn']")).click();
+	    	Thread.sleep(2000);
+	    	driver.switchTo().window(s[2].toString());
+	    	Thread.sleep(4000);
+	    	driver.findElement(By.linkText(".//*[@id='tabsLine-0']/table/tbody/tr[2]/td[2]/a")).click();
+	    	Thread.sleep(2000);
+	    	//driver.switchTo().window(s[0].toString());
+	     	//Thread.sleep(2000);
+	    	//driver.findElement(By.xpath(".//*[@id='tabsLine-0']/table/tbody/tr[3]/td[2]/a")).click();
+	   
+	    	/* driver.findElement(By.xpath(".//*[@id='item_number']")).sendKeys("am");//9
+	     	Thread.sleep(5000);
+	     	String str = driver.findElement(By.xpath(".//*[@id='ui-id-40']")).getText();
+	     	System.out.println(str);
+	     	String s[] = str.split("\n");
+	     	System.out.println("string length is " + s.length);
+	     		for(int i=0;i<s.length;i++){
+	     		if(s[i].equalsIgnoreCase("1900003")){//1900005
+	     			System.out.println(s[i]);
+	     				driver.findElement(By.xpath(".//*[@id='item_number']")).clear();
+	     			driver.findElement(By.xpath(".//*[@id='item_number']")).sendKeys(s[i]);
+	   */
+//driver.findElement(By.name("item_description[]")).sendKeys("Lenovo G70 17.3-Inch Laptop (80HW000WUS) Black");
+	 }
+	
+	/*@Test
+	 public void k() throws Exception{
+		driver.findElement(By.xpath(".//*[@id='ui-id-31']")).click();
+		Thread.sleep(1000);
+		new Select(driver.findElement(By.name("item_type[]"))).selectByVisibleText("Expense");
+		Thread.sleep(1000);
+		new Select(driver.findElement(By.name("uom_id[]"))).selectByVisibleText("HR");
+		Thread.sleep(1000);
+		new Select(driver.findElement(By.name("item_status[]"))).selectByVisibleText("Active");
+		Thread.sleep(1000);
+		driver.findElement(By.name("product_line_percentage[]")).sendKeys("85");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath(".//*[@id='ui-id-35']")).click();
+		Thread.sleep(1000);
+		new Select(driver.findElement(By.name("make_buy[]"))).selectByVisibleText("BUY");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(".//*[@id='save']")).click();
+	}*/
+  @BeforeTest
+  public void beforeTest() {
+	  driver = new FirefoxDriver();
+		driver.get("http://localhost/erp/");
+		driver.manage().window().maximize();
+  }
+
+  @AfterTest
+  public void afterTest() {
+	//  driver.close();
+	// driver.quit();
+  }
+
+}

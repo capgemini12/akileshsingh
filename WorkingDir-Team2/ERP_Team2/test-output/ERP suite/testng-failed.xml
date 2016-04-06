@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ERP suite]">
+  <test name="ERP testresults(failed)">
+    <classes>
+      <class name="Inventory_Module.Test_001">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- Inventory_Module.Test_001 -->
+      <class name="Inventory_Module.Test_002">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- Inventory_Module.Test_002 -->
+      <class name="Inventory_Module.Test_005">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- Inventory_Module.Test_005 -->
+      <class name="Inventory_Module.Test_003">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- Inventory_Module.Test_003 -->
+      <class name="Inventory_Module.Test_004">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="f"/>
+        </methods>
+      </class> <!-- Inventory_Module.Test_004 -->
+    </classes>
+  </test> <!-- ERP testresults(failed) -->
+</suite> <!-- Failed suite [ERP suite] -->

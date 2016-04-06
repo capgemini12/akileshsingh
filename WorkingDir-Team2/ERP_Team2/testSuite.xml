@@ -1,0 +1,11 @@
+<suite name = "Inv/Helper" >
+<test name  = "Execute With XML">
+<classes>
+<class name = "com.erp.Inventory"></class>
+<methods>
+<include name = "test07"></include>
+</methods>
+
+</classes>
+</test> 
+</suite>

@@ -1,0 +1,11 @@
+<suite name = "ERP suite">
+	<test name = "ERP testresults">
+		<classes> 
+			<class name = "Inventory_Module.Test_001"></class>
+			<class name = "Inventory_Module.Test_002"></class>
+			<class name = "Inventory_Module.Test_003"></class>
+			<class name = "Inventory_Module.Test_004"></class>
+			<class name = "Inventory_Module.Test_005"></class>
+		</classes>
+	</test>
+</suite>

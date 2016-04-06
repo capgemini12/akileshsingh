@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="231089" started-at="2015-08-20T07:00:12Z" finished-at="2015-08-20T07:04:04Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="231089" started-at="2015-08-20T07:00:12Z" finished-at="2015-08-20T07:04:04Z">
+      <class name="ERP_Demo.All_Module_Name">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:ERP_Demo.All_Module_Name@1961f4]" name="beforeTest" is-config="true" duration-ms="7848" started-at="2015-08-20T12:30:12Z" finished-at="2015-08-20T12:30:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="Test01()[pri:0, instance:ERP_Demo.All_Module_Name@1961f4]" name="Test01" duration-ms="12215" started-at="2015-08-20T12:30:20Z" finished-at="2015-08-20T12:30:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test01 -->
+        <test-method status="PASS" signature="Test02()[pri:0, instance:ERP_Demo.All_Module_Name@1961f4]" name="Test02" duration-ms="211011" started-at="2015-08-20T12:30:33Z" finished-at="2015-08-20T12:34:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test02 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:ERP_Demo.All_Module_Name@1961f4]" name="afterTest" is-config="true" duration-ms="0" started-at="2015-08-20T12:34:04Z" finished-at="2015-08-20T12:34:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- ERP_Demo.All_Module_Name -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

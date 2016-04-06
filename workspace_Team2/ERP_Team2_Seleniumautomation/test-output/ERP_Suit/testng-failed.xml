@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ERP_Suit]">
+  <test name="ERP_Result(failed)">
+    <classes>
+      <class name="ERP_Demo.Create_New_Account">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- ERP_Demo.Create_New_Account -->
+      <class name="ERP_Demo.Login">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- ERP_Demo.Login -->
+      <class name="ERP_Demo.Erp_itemnum_ajax">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="ItemNum_Ajax"/>
+        </methods>
+      </class> <!-- ERP_Demo.Erp_itemnum_ajax -->
+    </classes>
+  </test> <!-- ERP_Result(failed) -->
+</suite> <!-- Failed suite [ERP_Suit] -->

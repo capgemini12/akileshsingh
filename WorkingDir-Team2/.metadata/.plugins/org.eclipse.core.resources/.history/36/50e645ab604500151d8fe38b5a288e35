@@ -1,0 +1,4 @@
+<suite name ="Inventory18thAug">
+	<test name = "ERPTest">
+		<classes>
+			<class name = ""></class></classes></test></suite>

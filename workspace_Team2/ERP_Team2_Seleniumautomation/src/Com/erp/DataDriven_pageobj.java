@@ -1,0 +1,273 @@
+package Com.erp;
+
+
+import java.io.FileOutputStream;
+import java.util.List;
+import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+
+public class DataDriven_pageobj  {
+	public WebDriver driver;
+	  static int i=0;
+	 // int j=1;
+  @Test
+  public void f() throws Exception Helper {
+	  login();
+	 
+	  String time = timestamp();
+	  FileOutputStream fo =new FileOutputStream("D:\\workspace_Team2\\ERP_Team2_Seleniumautomation\\Result\\logo"+time+".xls");
+	  WritableWorkbook  wb = Workbook.createWorkbook(fo);
+	   WritableSheet ws =wb.createSheet("Result", 0);
+	  /*driver.findElement(By.xpath("html/body/div[1]/div/div/div[3]/div[1]/div/button")).click();
+		 
+	  Thread.sleep(3000);
+	  driver.findElement(By.id("username")).sendKeys("admin");
+	  driver.findElement(By.id("password")).sendKeys("admin");
+	  driver.findElement(By.name("submitLogin")).click();*/
+	// login();
+      Thread.sleep(3000);
+  
+  driver.findElement(By.xpath(".//*[@id='dashborad_menu']/li[1]/a")).click();
+	
+	  Thread.sleep(3000);
+	  
+	  driver.findElement(By.xpath(".//*[@id='path_by_module']/div/div[2]/ul[2]/li/ul/li[1]/a")).click();
+	  Thread.sleep(2000);
+	//  driver.findElement(By.id("ui-id-32")).click();
+	  Thread.sleep(3000);
+	  List<WebElement> lbl =driver.findElements(By.tagName("label"));
+	  List<WebElement> ddown= driver.findElements(By.tagName("select"));
+	  List<WebElement> input= driver.findElements(By.tagName("input"));
+	  List<WebElement> atag= driver.findElements(By.tagName("a"));
+	  
+	  String alink= driver.findElement(By.xpath(".//*[@id='erp_form_area']")).getText();
+	  
+	  String l[] =alink.split("\n");
+	 
+ 
+  /*DateFormat df =new SimpleDateFormat("yyyy_mmm_dd_hh_mm_ss a");
+	Date d =new Date();
+	String time =df.format(d);
+	System.out.println(time);*/
+ 
+	 
+   
+   //for (int k = 0; k < lbl.size(); k++)
+   //{
+		 
+	   
+		 
+		
+	// if(!lbl.get(k).getText().equalsIgnoreCase(""))
+	 //{
+		 //String content = lbl.get(k).getText();
+	// System.out.println("Available:"+content);
+	 
+   
+	//   for (i = 0; i < 1; i++)
+	 //  {
+		   
+		   /*for (i = 0; i <lbl.size(); i++)
+		   {
+			
+				   if(!lbl.get(i).getText().equalsIgnoreCase(""))
+				   {
+					 
+						  String content = lbl.get(i).getText();
+					      System.out.println("Available:"+content);
+			             Label lb = new Label(0, i, content);
+			              ws.addCell(lb);
+		            }
+		        
+		   
+		   }*/
+		   
+	  // }
+	   
+	   
+	   
+	   for (int m=0; m<ddown.size(); m++)
+		 {  
+			 if(!ddown.get(m).getText().equalsIgnoreCase(""))
+			 {
+	   String dstring=ddown.get(m).getAttribute("name");
+	   
+	 //--------------------------------------------  
+	   
+	  /* for (int r = 0; r <lbl.size(); r++)
+	   {
+		
+			     if(!lbl.get(r).getText().equalsIgnoreCase("")){
+			   
+				   String content = lbl.get(r).getText();
+				   if(dstring.contains(content))  
+					 */
+				      //System.out.println("Available:"+content);
+		            // Label lb = new Label(0, i, content);
+		             // ws.addCell(lb);
+	        
+	        
+	   
+	   
+	   
+	   //------------------------------------------------
+	   
+	   i++;
+	   Label lb = new Label(0, i, dstring);
+      System.out.println(dstring);
+	   ws.addCell(lb);
+       Label lb1 = new Label(1, i, "DropDown");
+       ws.addCell(lb1);
+	  
+       
+			  // }
+	  // }
+       
+       
+       
+       
+       
+       
+       
+       
+       
+			 }
+			 
+			 
+          }
+	
+	 
+	   //System.out.println(" jvalue"+j);
+	   
+	  // System.out.println("size"+input.size());
+	   for (int n=0; n<input.size(); n++)
+	   {  
+		   String istring = input.get(n).getAttribute("name");
+		   //System.out.println(istring);
+		   if(input.get(n).getAttribute("type").equalsIgnoreCase("checkbox"))
+		   {
+			   i++;
+			   Label lbc = new Label(0, i, istring);
+			   ws.addCell(lbc);
+			   Label lbc1 = new Label(1, i, "checkbox");
+			   ws.addCell(lbc1);
+		   }
+		   else if(input.get(n).getAttribute("type").equalsIgnoreCase("text"))
+		   {
+			   for (int r = 0; r <lbl.size(); r++)
+			   {
+				   if(!lbl.get(r).getText().equalsIgnoreCase(""))
+				   {
+					   String lbname = lbl.get(r).getText();
+					   String sf[]= lbname.split(" ");
+			       		if(istring.equalsIgnoreCase(sf[0]+"_"+sf[2]+"_"))
+			       		{
+			       			System.out.println(" filterd"+istring);
+			        	
+			       			i++;
+			       			Label lb = new Label(0, i, istring);
+			       			ws.addCell(lb);
+			       			Label lb1 = new Label(1, i, "Textbox");
+			       			ws.addCell(lb1);
+			       		}
+				   }		       			     
+			   }
+		   }
+		  
+			       			     
+			           else{
+			        	i++;
+				         Label lbo = new Label(0, i, istring);
+				         ws.addCell(lbo);
+				         Label lbo1 = new Label(1, i, "Other");
+				         ws.addCell(lbo1);
+			        	
+			        }
+	          }
+				 
+	  /* for (int p=0; p<l.length; p++)
+	   {  
+		   System.out.println("link"+l[p]);
+		   
+		 
+			
+			 
+					// String lstring = alink.get(p).getText();
+				 
+			       // System.out.println("link"+lstring);
+			        
+			        	i++;
+				         Label lbk = new Label(0, i, l[p]);
+				         ws.addCell(lbk);
+				         Label lbk1 = new Label(1, i, "Link");
+				         ws.addCell(lbk1);
+			        
+	   }
+	   */
+	   
+	   
+	   
+	   for (int q=0; q<atag.size(); q++)
+		 {  
+			 //if(!atag.get(q).getText().equalsIgnoreCase("")){
+			 
+	   String tstring=atag.get(q).getAttribute("class");
+	   
+	    if(tstring.equalsIgnoreCase("ui-tabs-anchor"))
+	    {
+	    	String slink=atag.get(q).getText();
+	   i++;
+	   Label lbg = new Label(0, i, slink );
+
+	   ws.addCell(lbg);
+       Label lbg1 = new Label(1, i, "link");
+       ws.addCell(lbg1);
+	  
+			 }
+			// } 
+			 
+          }
+	 
+	   Label or =new Label(0,0,"Object Repository");
+	   Label ot =new Label(1,0,"Object Type");
+	   ws.addCell(or);
+	   ws.addCell(ot);
+   
+	   wb.write();
+	   wb.close();
+ 
+  }
+
+  private void login() {
+	// TODO Auto-generated method stub
+	
+}
+
+private String timestamp() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@BeforeTest
+  public void beforeTest() {
+	   
+			driver=new FirefoxDriver();
+			 driver.manage().window().maximize();
+			 driver.get("http://localhost/erp/");
+  }
+
+  @AfterTest
+  public void afterTest() {
+  }
+
+}

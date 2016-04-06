@@ -1,0 +1,7 @@
+<suite name ="Inventory18thAug">
+	<test name = "ERPTest">
+		<classes>
+			<class name = "com.erp.DataDriven_Script"></class>
+	    </classes>
+	</test>
+</suite>

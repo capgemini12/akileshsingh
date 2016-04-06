@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Inventory18thAug" duration-ms="578217" started-at="2015-08-24T04:51:56Z" finished-at="2015-08-24T05:01:34Z">
+    <groups>
+    </groups>
+    <test name="ERPTest" duration-ms="578217" started-at="2015-08-24T04:51:56Z" finished-at="2015-08-24T05:01:34Z">
+      <class name="com.erp.DataDriven_Script">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.erp.DataDriven_Script@155e0bc]" name="beforeTest" is-config="true" duration-ms="36007" started-at="2015-08-24T10:21:56Z" finished-at="2015-08-24T10:22:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="Read_Excel()[pri:0, instance:com.erp.DataDriven_Script@155e0bc]" name="Read_Excel" duration-ms="542194" started-at="2015-08-24T10:22:32Z" finished-at="2015-08-24T10:31:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Read_Excel -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.erp.DataDriven_Script@155e0bc]" name="afterTest" is-config="true" duration-ms="0" started-at="2015-08-24T10:31:34Z" finished-at="2015-08-24T10:31:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.erp.DataDriven_Script -->
+    </test> <!-- ERPTest -->
+  </suite> <!-- Inventory18thAug -->
+</testng-results>

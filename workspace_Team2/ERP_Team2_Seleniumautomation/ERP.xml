@@ -1,0 +1,11 @@
+
+<suite name="ERP_Suit">
+<test name="ERP_Result">
+<classes>
+ <class name="ERP_Demo.Login"></class>
+<class name="ERP_Demo.Erp_itemnum_ajax"></class>
+<class name="ERP_Demo.Create_New_Account"></class>
+
+</classes>
+</test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [inventory_suit]">
+  <test name="erp_result(failed)">
+    <classes>
+      <class name="Com.erp.Inventory">
+        <methods>
+          <include name="afterTest"/>
+          <include name="testo9"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- Com.erp.Inventory -->
+    </classes>
+  </test> <!-- erp_result(failed) -->
+</suite> <!-- Failed suite [inventory_suit] -->

@@ -1,0 +1,10 @@
+<suite name ="ERP Inventory">
+<test name ="Inventory">
+
+<classes>
+
+<class name="com.ERP.Inventory.java">
+</classes>
+</test>
+
+</suite>
